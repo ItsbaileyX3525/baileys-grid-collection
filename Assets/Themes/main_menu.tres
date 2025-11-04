@@ -1,0 +1,64 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://d1liuws7rhhs3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_utquq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhdih"]
+bg_color = Color(0.83549964, 0.56837475, 0.52109027, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.20392157, 0.20392157, 0.20392157, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 16
+shadow_offset = Vector2(6, 8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cy5m"]
+bg_color = Color(0.7821685, 0.48785293, 0.43588385, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.20392157, 0.20392157, 0.20392157, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 16
+shadow_offset = Vector2(6, 8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bn2lg"]
+bg_color = Color(0.70258117, 0.41005105, 0.36094445, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.20392157, 0.20392157, 0.20392157, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 16
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7lt3"]
+draw_center = false
+
+[resource]
+Button/font_sizes/font_size = 240
+Button/styles/focus = SubResource("StyleBoxFlat_utquq")
+Button/styles/hover = SubResource("StyleBoxFlat_fhdih")
+Button/styles/normal = SubResource("StyleBoxFlat_3cy5m")
+Button/styles/pressed = SubResource("StyleBoxFlat_bn2lg")
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 35
+Label/constants/paragraph_spacing = 10
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 240
+Label/styles/normal = SubResource("StyleBoxFlat_u7lt3")

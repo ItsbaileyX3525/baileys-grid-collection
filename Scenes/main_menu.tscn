@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://b3am12l07h826"]
+[gd_scene load_steps=3 format=3 uid="uid://b3am12l07h826"]
+
+[ext_resource type="Theme" uid="uid://d1liuws7rhhs3" path="res://Assets/Themes/main_menu.tres" id="1_28flt"]
+[ext_resource type="Script" uid="uid://b41xswffwae88" path="res://Scripts/main_menu.gd" id="1_48xlc"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,15 +10,55 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_48xlc")
 
 [node name="BGColor" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1156.0
-offset_bottom = 656.0
+offset_right = 1152.0
+offset_bottom = 648.0
 color = Color(0.41009685, 0.28877982, 0.628901, 1)
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Game title"
+offset_right = 3569.0618
+offset_bottom = 291.0
+scale = Vector2(0.32305408, 0.32305408)
+theme = ExtResource("1_28flt")
+text = "Bailey's grid collection!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -315.0
+offset_top = -122.0
+offset_right = 2569.0
+offset_bottom = 1193.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.21981375, 0.21981375)
+theme_override_constants/separation = 209
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_28flt")
+text = "Games"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_28flt")
+text = "Options"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_28flt")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
