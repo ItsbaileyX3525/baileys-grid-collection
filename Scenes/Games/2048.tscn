@@ -58,36 +58,80 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="GameArea/VBoxContainer"]
+[node name="MarginContainer1" type="MarginContainer" parent="GameArea/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="GameArea/VBoxContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="GameArea/VBoxContainer/MarginContainer1"]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="ColorRect" type="Panel" parent="GameArea/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="Row1Col1" type="Panel" parent="GameArea/VBoxContainer/MarginContainer1/HBoxContainer"]
 custom_minimum_size = Vector2(135, 135)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
 
-[node name="ColorRect2" type="Panel" parent="GameArea/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="GameArea/VBoxContainer/MarginContainer1/HBoxContainer/Row1Col1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row1Col2" type="Panel" parent="GameArea/VBoxContainer/MarginContainer1/HBoxContainer"]
 custom_minimum_size = Vector2(135, 135)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
 
-[node name="ColorRect3" type="Panel" parent="GameArea/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="GameArea/VBoxContainer/MarginContainer1/HBoxContainer/Row1Col2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row1Col3" type="Panel" parent="GameArea/VBoxContainer/MarginContainer1/HBoxContainer"]
 custom_minimum_size = Vector2(135, 135)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
 
-[node name="ColorRect4" type="Panel" parent="GameArea/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="GameArea/VBoxContainer/MarginContainer1/HBoxContainer/Row1Col3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row1Col4" type="Panel" parent="GameArea/VBoxContainer/MarginContainer1/HBoxContainer"]
 custom_minimum_size = Vector2(135, 135)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
+
+[node name="Label" type="Label" parent="GameArea/VBoxContainer/MarginContainer1/HBoxContainer/Row1Col4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="GameArea/VBoxContainer"]
 layout_mode = 2
@@ -99,25 +143,69 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="ColorRect" type="Panel" parent="GameArea/VBoxContainer/MarginContainer2/HBoxContainer"]
+[node name="Row2Col1" type="Panel" parent="GameArea/VBoxContainer/MarginContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(135, 135)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
 
-[node name="ColorRect2" type="Panel" parent="GameArea/VBoxContainer/MarginContainer2/HBoxContainer"]
+[node name="Label" type="Label" parent="GameArea/VBoxContainer/MarginContainer2/HBoxContainer/Row2Col1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row2Col2" type="Panel" parent="GameArea/VBoxContainer/MarginContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(135, 135)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
 
-[node name="ColorRect3" type="Panel" parent="GameArea/VBoxContainer/MarginContainer2/HBoxContainer"]
+[node name="Label" type="Label" parent="GameArea/VBoxContainer/MarginContainer2/HBoxContainer/Row2Col2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row2Col3" type="Panel" parent="GameArea/VBoxContainer/MarginContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(135, 135)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
 
-[node name="ColorRect4" type="Panel" parent="GameArea/VBoxContainer/MarginContainer2/HBoxContainer"]
+[node name="Label" type="Label" parent="GameArea/VBoxContainer/MarginContainer2/HBoxContainer/Row2Col3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row2Col4" type="Panel" parent="GameArea/VBoxContainer/MarginContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(135, 135)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
+
+[node name="Label" type="Label" parent="GameArea/VBoxContainer/MarginContainer2/HBoxContainer/Row2Col4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MarginContainer3" type="MarginContainer" parent="GameArea/VBoxContainer"]
 layout_mode = 2
@@ -129,25 +217,69 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="ColorRect" type="Panel" parent="GameArea/VBoxContainer/MarginContainer3/HBoxContainer"]
+[node name="Row3Col1" type="Panel" parent="GameArea/VBoxContainer/MarginContainer3/HBoxContainer"]
 custom_minimum_size = Vector2(135, 135)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
 
-[node name="ColorRect2" type="Panel" parent="GameArea/VBoxContainer/MarginContainer3/HBoxContainer"]
+[node name="Label" type="Label" parent="GameArea/VBoxContainer/MarginContainer3/HBoxContainer/Row3Col1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row3Col2" type="Panel" parent="GameArea/VBoxContainer/MarginContainer3/HBoxContainer"]
 custom_minimum_size = Vector2(135, 135)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
 
-[node name="ColorRect3" type="Panel" parent="GameArea/VBoxContainer/MarginContainer3/HBoxContainer"]
+[node name="Label" type="Label" parent="GameArea/VBoxContainer/MarginContainer3/HBoxContainer/Row3Col2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row3Col3" type="Panel" parent="GameArea/VBoxContainer/MarginContainer3/HBoxContainer"]
 custom_minimum_size = Vector2(135, 135)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
 
-[node name="ColorRect4" type="Panel" parent="GameArea/VBoxContainer/MarginContainer3/HBoxContainer"]
+[node name="Label" type="Label" parent="GameArea/VBoxContainer/MarginContainer3/HBoxContainer/Row3Col3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row3Col4" type="Panel" parent="GameArea/VBoxContainer/MarginContainer3/HBoxContainer"]
 custom_minimum_size = Vector2(135, 135)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
+
+[node name="Label" type="Label" parent="GameArea/VBoxContainer/MarginContainer3/HBoxContainer/Row3Col4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MarginContainer4" type="MarginContainer" parent="GameArea/VBoxContainer"]
 layout_mode = 2
@@ -159,25 +291,69 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="ColorRect" type="Panel" parent="GameArea/VBoxContainer/MarginContainer4/HBoxContainer"]
+[node name="Row4Col1" type="Panel" parent="GameArea/VBoxContainer/MarginContainer4/HBoxContainer"]
 custom_minimum_size = Vector2(135, 135)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
 
-[node name="ColorRect2" type="Panel" parent="GameArea/VBoxContainer/MarginContainer4/HBoxContainer"]
+[node name="Label" type="Label" parent="GameArea/VBoxContainer/MarginContainer4/HBoxContainer/Row4Col1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row4Col2" type="Panel" parent="GameArea/VBoxContainer/MarginContainer4/HBoxContainer"]
 custom_minimum_size = Vector2(135, 135)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
 
-[node name="ColorRect3" type="Panel" parent="GameArea/VBoxContainer/MarginContainer4/HBoxContainer"]
+[node name="Label" type="Label" parent="GameArea/VBoxContainer/MarginContainer4/HBoxContainer/Row4Col2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row4Col3" type="Panel" parent="GameArea/VBoxContainer/MarginContainer4/HBoxContainer"]
 custom_minimum_size = Vector2(135, 135)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
 
-[node name="ColorRect4" type="Panel" parent="GameArea/VBoxContainer/MarginContainer4/HBoxContainer"]
+[node name="Label" type="Label" parent="GameArea/VBoxContainer/MarginContainer4/HBoxContainer/Row4Col3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row4Col4" type="Panel" parent="GameArea/VBoxContainer/MarginContainer4/HBoxContainer"]
 custom_minimum_size = Vector2(135, 135)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
+
+[node name="Label" type="Label" parent="GameArea/VBoxContainer/MarginContainer4/HBoxContainer/Row4Col4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Return" type="Button" parent="."]
 layout_mode = 0
