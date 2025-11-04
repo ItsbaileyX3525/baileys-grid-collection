@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://og3w8xj70hjg"]
+
+[ext_resource type="Theme" uid="uid://bqsfmgjhhix7j" path="res://Assets/Themes/games_selector.tres" id="1_h1j5r"]
+[ext_resource type="Script" uid="uid://c5xexham2rv4v" path="res://Scripts/games_selector.gd" id="1_o8dpw"]
+[ext_resource type="Texture2D" uid="uid://c2v75a4arwee" path="res://Assets/Decals/2048.jpg" id="3_eorsm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eorsm"]
+texture = ExtResource("3_eorsm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_41op2"]
+texture = ExtResource("3_eorsm")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="GamesSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o8dpw")
+
+[node name="BGColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.88023484, 0.4769609, 0.4338361, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="2048" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(384, 0)
+layout_mode = 2
+theme = ExtResource("1_h1j5r")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_eorsm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_41op2")
+text = "2048"
+autowrap_mode = 3
+
+[node name="Merge" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(384, 0)
+layout_mode = 2
+theme = ExtResource("1_h1j5r")
+text = "Merge City"
+
+[node name="tactactoe" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(384, 0)
+layout_mode = 2
+theme = ExtResource("1_h1j5r")
+text = "Noughts and Crosses (tictactoe)"
+autowrap_mode = 3
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_right = 3395.9937
+offset_bottom = 341.9577
+scale = Vector2(0.33922327, 0.33922327)
+theme = ExtResource("1_h1j5r")
+text = "Games Selector"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer/2048" to="." method="_on__pressed"]
+[connection signal="pressed" from="HBoxContainer/Merge" to="." method="_on_merge_pressed"]
+[connection signal="pressed" from="HBoxContainer/tactactoe" to="." method="_on_tactactoe_pressed"]

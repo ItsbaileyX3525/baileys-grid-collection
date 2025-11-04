@@ -1,0 +1,188 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnnmdxss17ni6"]
+
+[ext_resource type="Script" uid="uid://c08ydbqupjc2y" path="res://Scripts/Games/2048.gd" id="1_e75ia"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_07lio"]
+bg_color = Color(0.6549564, 0.6170574, 0.5538235, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e75ia"]
+bg_color = Color(0.7921569, 0.7529412, 0.7137255, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="2048" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e75ia")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.387131, 0.3536407, 0.31322846, 1)
+
+[node name="GameArea" type="Panel" parent="."]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 300.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_07lio")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GameArea/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameArea/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="ColorRect" type="Panel" parent="GameArea/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(135, 135)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
+
+[node name="ColorRect2" type="Panel" parent="GameArea/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(135, 135)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
+
+[node name="ColorRect3" type="Panel" parent="GameArea/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(135, 135)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
+
+[node name="ColorRect4" type="Panel" parent="GameArea/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(135, 135)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
+
+[node name="MarginContainer2" type="MarginContainer" parent="GameArea/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameArea/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="ColorRect" type="Panel" parent="GameArea/VBoxContainer/MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(135, 135)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
+
+[node name="ColorRect2" type="Panel" parent="GameArea/VBoxContainer/MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(135, 135)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
+
+[node name="ColorRect3" type="Panel" parent="GameArea/VBoxContainer/MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(135, 135)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
+
+[node name="ColorRect4" type="Panel" parent="GameArea/VBoxContainer/MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(135, 135)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
+
+[node name="MarginContainer3" type="MarginContainer" parent="GameArea/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameArea/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="ColorRect" type="Panel" parent="GameArea/VBoxContainer/MarginContainer3/HBoxContainer"]
+custom_minimum_size = Vector2(135, 135)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
+
+[node name="ColorRect2" type="Panel" parent="GameArea/VBoxContainer/MarginContainer3/HBoxContainer"]
+custom_minimum_size = Vector2(135, 135)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
+
+[node name="ColorRect3" type="Panel" parent="GameArea/VBoxContainer/MarginContainer3/HBoxContainer"]
+custom_minimum_size = Vector2(135, 135)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
+
+[node name="ColorRect4" type="Panel" parent="GameArea/VBoxContainer/MarginContainer3/HBoxContainer"]
+custom_minimum_size = Vector2(135, 135)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
+
+[node name="MarginContainer4" type="MarginContainer" parent="GameArea/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameArea/VBoxContainer/MarginContainer4"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="ColorRect" type="Panel" parent="GameArea/VBoxContainer/MarginContainer4/HBoxContainer"]
+custom_minimum_size = Vector2(135, 135)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
+
+[node name="ColorRect2" type="Panel" parent="GameArea/VBoxContainer/MarginContainer4/HBoxContainer"]
+custom_minimum_size = Vector2(135, 135)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
+
+[node name="ColorRect3" type="Panel" parent="GameArea/VBoxContainer/MarginContainer4/HBoxContainer"]
+custom_minimum_size = Vector2(135, 135)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
+
+[node name="ColorRect4" type="Panel" parent="GameArea/VBoxContainer/MarginContainer4/HBoxContainer"]
+custom_minimum_size = Vector2(135, 135)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e75ia")
+
+[node name="Return" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(0.24680576, 0.24680576)
+theme_override_font_sizes/font_size = 240
+text = "Return"
