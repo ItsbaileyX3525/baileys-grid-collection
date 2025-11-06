@@ -4,6 +4,33 @@
 [ext_resource type="Theme" uid="uid://c4yyml5ejheaf" path="res://Assets/Themes/options.tres" id="1_prnvy"]
 [ext_resource type="AudioStream" uid="uid://qhqvxvx2oo56" path="res://Assets/OST/CRAZY NOISY BIZARRE TOWN.mp3" id="3_qyyw6"]
 
+[sub_resource type="Animation" id="Animation_qyyw6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(415.99997, 612)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_prnvy"]
 resource_name = "play"
 length = 0.8
@@ -30,33 +57,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_qyyw6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(415.99997, 612)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4tmxy"]
@@ -129,8 +129,8 @@ visible = false
 layout_mode = 0
 offset_left = 415.99997
 offset_top = 612.0
-offset_right = 2206.0
-offset_bottom = 903.0
+offset_right = 2353.0
+offset_bottom = 940.0
 scale = Vector2(0.19495168, 0.19495168)
 theme = ExtResource("1_prnvy")
 text = "Settings Applied!"
