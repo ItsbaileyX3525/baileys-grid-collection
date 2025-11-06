@@ -11,6 +11,61 @@ var game_data: Dictionary = {
 		
 	},
 	"mergecity": {
+		"row1" : {
+			"1" : "burger",
+			"2" : "burger",
+			"3" : "burger",
+			"4" : "burger",
+			"5" : "burger",
+			"6" : "burger",
+			"7" : "burger",
+			"8" : "burger",
+			"9" : "burger"
+		},
+		"row2" : {
+			"1" : "burger",
+			"2" : "burger",
+			"3" : "burger",
+			"4" : "burger",
+			"5" : "burger",
+			"6" : "burger",
+			"7" : "burger",
+			"8" : "burger",
+			"9" : "burger"
+		},
+		"row3" : {
+			"1" : "burger",
+			"2" : "burger",
+			"3" : "burger",
+			"4" : "burger",
+			"5" : "burger",
+			"6" : "burger",
+			"7" : "burger",
+			"8" : "burger",
+			"9" : "burger"
+		},
+		"row4" : {
+			"1" : "burger",
+			"2" : "burger",
+			"3" : "burger",
+			"4" : "burger",
+			"5" : "burger",
+			"6" : "burger",
+			"7" : "burger",
+			"8" : "burger",
+			"9" : "burger"
+		},
+		"row5" : {
+			"1" : "burger",
+			"2" : "burger",
+			"3" : "burger",
+			"4" : "burger",
+			"5" : "burger",
+			"6" : "burger",
+			"7" : "burger",
+			"8" : "burger",
+			"9" : "burger"
+		},
 		
 	}
 }
@@ -34,4 +89,4 @@ func load_data():
 		game_data = data
 	
 func _ready() -> void:
-	pass
+	load_data()

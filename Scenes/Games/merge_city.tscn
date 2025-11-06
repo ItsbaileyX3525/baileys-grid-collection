@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://1cm8sbb6e3sf"]
+[gd_scene load_steps=12 format=3 uid="uid://1cm8sbb6e3sf"]
 
 [ext_resource type="Script" uid="uid://kbb0k5ru0il1" path="res://Scripts/Games/merge_city.gd" id="1_8plyl"]
-[ext_resource type="Texture2D" uid="uid://l50p1x3khroq" path="res://Assets/Decals/merge/borgir.png" id="2_adksn"]
 [ext_resource type="Texture2D" uid="uid://dni27hqfwesg2" path="res://Assets/Decals/merge/bin.png" id="3_5lsn7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5jxc"]
@@ -92,24 +91,24 @@ custom_minimum_size = Vector2(1152, 104.6)
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="GridItem" type="Button" parent="GameArea/VBoxContainer/Row1"]
+[node name="GridItem1" type="Button" parent="GameArea/VBoxContainer/Row1"]
 custom_minimum_size = Vector2(115.2, 104.6)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
 theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+expand_icon = true
 
-[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row1/GridItem"]
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row1/GridItem1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem2" type="Button" parent="GameArea/VBoxContainer/Row1"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -126,9 +125,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem3" type="Button" parent="GameArea/VBoxContainer/Row1"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -145,9 +143,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem4" type="Button" parent="GameArea/VBoxContainer/Row1"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -164,9 +161,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem5" type="Button" parent="GameArea/VBoxContainer/Row1"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -183,9 +179,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem6" type="Button" parent="GameArea/VBoxContainer/Row1"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -202,9 +197,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem7" type="Button" parent="GameArea/VBoxContainer/Row1"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -221,9 +215,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem8" type="Button" parent="GameArea/VBoxContainer/Row1"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -240,9 +233,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem9" type="Button" parent="GameArea/VBoxContainer/Row1"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -259,16 +251,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="Row2" type="HBoxContainer" parent="GameArea/VBoxContainer"]
 custom_minimum_size = Vector2(1152, 104.6)
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="GridItem" type="Button" parent="GameArea/VBoxContainer/Row2"]
+[node name="GridItem1" type="Button" parent="GameArea/VBoxContainer/Row2"]
 custom_minimum_size = Vector2(115.2, 104.6)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
@@ -276,16 +267,15 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
 theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
 
-[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row2/GridItem"]
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row2/GridItem1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem2" type="Button" parent="GameArea/VBoxContainer/Row2"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -302,9 +292,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem3" type="Button" parent="GameArea/VBoxContainer/Row2"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -321,9 +310,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem4" type="Button" parent="GameArea/VBoxContainer/Row2"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -340,9 +328,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem5" type="Button" parent="GameArea/VBoxContainer/Row2"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -359,9 +346,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem6" type="Button" parent="GameArea/VBoxContainer/Row2"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -378,9 +364,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem7" type="Button" parent="GameArea/VBoxContainer/Row2"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -397,9 +382,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem8" type="Button" parent="GameArea/VBoxContainer/Row2"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -416,9 +400,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem9" type="Button" parent="GameArea/VBoxContainer/Row2"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -435,16 +418,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="Row3" type="HBoxContainer" parent="GameArea/VBoxContainer"]
 custom_minimum_size = Vector2(1152, 104.6)
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="GridItem" type="Button" parent="GameArea/VBoxContainer/Row3"]
+[node name="GridItem1" type="Button" parent="GameArea/VBoxContainer/Row3"]
 custom_minimum_size = Vector2(115.2, 104.6)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
@@ -452,16 +434,15 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
 theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
 
-[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row3/GridItem"]
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row3/GridItem1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem2" type="Button" parent="GameArea/VBoxContainer/Row3"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -478,9 +459,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem3" type="Button" parent="GameArea/VBoxContainer/Row3"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -497,9 +477,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem4" type="Button" parent="GameArea/VBoxContainer/Row3"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -516,9 +495,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem5" type="Button" parent="GameArea/VBoxContainer/Row3"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -535,9 +513,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem6" type="Button" parent="GameArea/VBoxContainer/Row3"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -554,9 +531,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem7" type="Button" parent="GameArea/VBoxContainer/Row3"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -573,9 +549,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem8" type="Button" parent="GameArea/VBoxContainer/Row3"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -592,9 +567,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem9" type="Button" parent="GameArea/VBoxContainer/Row3"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -611,16 +585,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="Row4" type="HBoxContainer" parent="GameArea/VBoxContainer"]
 custom_minimum_size = Vector2(1152, 104.6)
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="GridItem" type="Button" parent="GameArea/VBoxContainer/Row4"]
+[node name="GridItem1" type="Button" parent="GameArea/VBoxContainer/Row4"]
 custom_minimum_size = Vector2(115.2, 104.6)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
@@ -628,16 +601,15 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
 theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
 
-[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row4/GridItem"]
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row4/GridItem1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem2" type="Button" parent="GameArea/VBoxContainer/Row4"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -654,9 +626,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem3" type="Button" parent="GameArea/VBoxContainer/Row4"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -673,9 +644,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem4" type="Button" parent="GameArea/VBoxContainer/Row4"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -692,9 +662,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem5" type="Button" parent="GameArea/VBoxContainer/Row4"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -711,9 +680,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem6" type="Button" parent="GameArea/VBoxContainer/Row4"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -730,9 +698,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem7" type="Button" parent="GameArea/VBoxContainer/Row4"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -749,9 +716,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem8" type="Button" parent="GameArea/VBoxContainer/Row4"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -768,9 +734,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem9" type="Button" parent="GameArea/VBoxContainer/Row4"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -787,16 +752,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="Row5" type="HBoxContainer" parent="GameArea/VBoxContainer"]
 custom_minimum_size = Vector2(1152, 104.6)
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="GridItem" type="Button" parent="GameArea/VBoxContainer/Row5"]
+[node name="GridItem1" type="Button" parent="GameArea/VBoxContainer/Row5"]
 custom_minimum_size = Vector2(115.2, 104.6)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
@@ -804,16 +768,15 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
 theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
 
-[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row5/GridItem"]
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row5/GridItem1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem2" type="Button" parent="GameArea/VBoxContainer/Row5"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -830,9 +793,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem3" type="Button" parent="GameArea/VBoxContainer/Row5"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -849,9 +811,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem4" type="Button" parent="GameArea/VBoxContainer/Row5"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -868,9 +829,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem5" type="Button" parent="GameArea/VBoxContainer/Row5"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -887,9 +847,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem6" type="Button" parent="GameArea/VBoxContainer/Row5"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -906,9 +865,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem7" type="Button" parent="GameArea/VBoxContainer/Row5"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -925,9 +883,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem8" type="Button" parent="GameArea/VBoxContainer/Row5"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -944,9 +901,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="GridItem9" type="Button" parent="GameArea/VBoxContainer/Row5"]
 custom_minimum_size = Vector2(115.2, 104.6)
@@ -963,9 +919,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_adksn")
 expand_mode = 1
-metadata/item = "burger"
+metadata/item = "none"
 
 [node name="Toolbar" type="Panel" parent="."]
 layout_mode = 1
@@ -1007,6 +962,15 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_401co")
 theme_override_styles/focus = SubResource("StyleBoxFlat_n1wdb")
 icon = ExtResource("3_5lsn7")
 expand_icon = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="Toolbar/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+
+[node name="CoinsLabel" type="Label" parent="Toolbar/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "COINS: 67"
 
 [connection signal="pressed" from="Toolbar/HBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Toolbar/HBoxContainer/Delete" to="." method="_on_delete_pressed"]
