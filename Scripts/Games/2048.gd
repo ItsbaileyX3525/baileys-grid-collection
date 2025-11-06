@@ -35,19 +35,22 @@ var data: Dictionary = {
 	}
 }
 
-func save_data() -> void:
-	pass
-
-func load_data() -> void:
-	pass
-
 func on_death() -> void:
 	game_over = true
 	var total_score = collect_score()
-	var highest_block = find_highest()
+	var highest_block_match = find_highest()
+	var block_highscore = SaveManager.game_data["2048"]["highest_block"]
+	var highscore = SaveManager.game_data["2048"]["high_score"]
+	if highest_block_match > block_highscore:
+		SaveManager.game_data["2048"]["highest_block"] = highest_block_match
+	if total_score > highscore:
+		SaveManager.game_data["2048"]["high_score"] = total_score
 	game_over_panel.visible = true
-	score.text = str(total_score)
-	highest.text = str(highest_block)
+	score.text = "Score: " + str(total_score)
+	highest.text = "Higest block: " + str(highest_block_match)
+	highest_score.text = "Block highscore: " + str(block_highscore)
+	high_score.text = "Highscore: " + str(highscore)
+	SaveManager.save_data()
 
 func get_empty_cells() -> Array:
 	var empty = []
