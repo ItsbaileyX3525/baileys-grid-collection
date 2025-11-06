@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnnmdxss17ni6"]
+[gd_scene load_steps=5 format=3 uid="uid://dnnmdxss17ni6"]
 
 [ext_resource type="Script" uid="uid://c08ydbqupjc2y" path="res://Scripts/Games/2048.gd" id="1_e75ia"]
 
@@ -15,6 +15,13 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m347k"]
+bg_color = Color(0.654902, 0.6156863, 0.5529412, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
 
 [node name="2048" type="Control"]
 layout_mode = 3
@@ -355,10 +362,102 @@ theme_override_font_sizes/font_size = 56
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="GameOver" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 276.0
+offset_top = 24.0
+offset_right = 876.0
+offset_bottom = 624.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_m347k")
+
+[node name="GameOverText" type="Label" parent="GameOver"]
+layout_mode = 0
+offset_right = 2268.826
+offset_bottom = 373.11258
+scale = Vector2(0.26533547, 0.26533547)
+theme_override_colors/font_color = Color(0.41105002, 0.36609045, 0.26412675, 1)
+theme_override_font_sizes/font_size = 246
+text = "Game Over!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="GameOver"]
+layout_mode = 0
+offset_top = 98.0
+offset_right = 2940.456
+offset_bottom = 471.11258
+scale = Vector2(0.20370992, 0.20370992)
+theme_override_colors/font_color = Color(0.41105002, 0.36609045, 0.26412675, 1)
+theme_override_font_sizes/font_size = 246
+text = "Score: 67"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Highest" type="Label" parent="GameOver"]
+layout_mode = 0
+offset_top = 181.0
+offset_right = 2666.854
+offset_bottom = 554.11255
+scale = Vector2(0.22498421, 0.22498421)
+theme_override_colors/font_color = Color(0.41105002, 0.36609045, 0.26412675, 1)
+theme_override_font_sizes/font_size = 246
+text = "Highest block: 69"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScore" type="Label" parent="GameOver"]
+layout_mode = 0
+offset_top = 278.0
+offset_right = 2666.854
+offset_bottom = 651.11255
+scale = Vector2(0.22498421, 0.22498421)
+theme_override_colors/font_color = Color(0.41105002, 0.36609045, 0.26412675, 1)
+theme_override_font_sizes/font_size = 246
+text = "Highscore: 78"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighestScore" type="Label" parent="GameOver"]
+layout_mode = 0
+offset_top = 367.00003
+offset_right = 2666.854
+offset_bottom = 740.11255
+scale = Vector2(0.22498421, 0.22498421)
+theme_override_colors/font_color = Color(0.41105002, 0.36609045, 0.26412675, 1)
+theme_override_font_sizes/font_size = 246
+text = "block highscore: 78"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="Button" parent="GameOver"]
+layout_mode = 0
+offset_left = 317.99997
+offset_top = 491.0
+offset_right = 1296.6333
+offset_bottom = 790.0
+scale = Vector2(0.25137106, 0.25137106)
+theme_override_font_sizes/font_size = 240
+text = "Exit"
+
+[node name="Retry" type="Button" parent="GameOver"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 491.0
+offset_right = 1022.5676
+offset_bottom = 790.0
+scale = Vector2(0.25137106, 0.25137106)
+theme_override_font_sizes/font_size = 240
+text = "Retry"
+
 [node name="Return" type="Button" parent="."]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_right = 867.0786
+offset_bottom = 299.0
 scale = Vector2(0.24680576, 0.24680576)
 theme_override_font_sizes/font_size = 240
 text = "Return"
+
+[connection signal="pressed" from="GameOver/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="GameOver/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

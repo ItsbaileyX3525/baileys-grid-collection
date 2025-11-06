@@ -1,20 +1,12 @@
 extends Control
-@onready var row_1_col_1: Panel = $GameArea/VBoxContainer/MarginContainer1/HBoxContainer/Row1Col1
-@onready var row_1_col_2: Panel = $GameArea/VBoxContainer/MarginContainer1/HBoxContainer/Row1Col2
-@onready var row_1_col_3: Panel = $GameArea/VBoxContainer/MarginContainer1/HBoxContainer/Row1Col3
-@onready var row_1_col_4: Panel = $GameArea/VBoxContainer/MarginContainer1/HBoxContainer/Row1Col4
-@onready var row_2_col_1: Panel = $GameArea/VBoxContainer/MarginContainer2/HBoxContainer/Row2Col1
-@onready var row_2_col_2: Panel = $GameArea/VBoxContainer/MarginContainer2/HBoxContainer/Row2Col2
-@onready var row_2_col_3: Panel = $GameArea/VBoxContainer/MarginContainer2/HBoxContainer/Row2Col3
-@onready var row_2_col_4: Panel = $GameArea/VBoxContainer/MarginContainer2/HBoxContainer/Row2Col4
-@onready var row_3_col_1: Panel = $GameArea/VBoxContainer/MarginContainer3/HBoxContainer/Row3Col1
-@onready var row_3_col_2: Panel = $GameArea/VBoxContainer/MarginContainer3/HBoxContainer/Row3Col2
-@onready var row_3_col_3: Panel = $GameArea/VBoxContainer/MarginContainer3/HBoxContainer/Row3Col3
-@onready var row_3_col_4: Panel = $GameArea/VBoxContainer/MarginContainer3/HBoxContainer/Row3Col4
-@onready var row_4_col_1: Panel = $GameArea/VBoxContainer/MarginContainer4/HBoxContainer/Row4Col1
-@onready var row_4_col_2: Panel = $GameArea/VBoxContainer/MarginContainer4/HBoxContainer/Row4Col2
-@onready var row_4_col_3: Panel = $GameArea/VBoxContainer/MarginContainer4/HBoxContainer/Row4Col3
-@onready var row_4_col_4: Panel = $GameArea/VBoxContainer/MarginContainer4/HBoxContainer/Row4Col4
+@onready var game_over_panel: Panel = $GameOver
+@onready var game_over_text: Label = $GameOver/GameOverText
+@onready var score: Label = $GameOver/Score
+@onready var highest: Label = $GameOver/Highest
+@onready var high_score: Label = $GameOver/HighScore
+@onready var highest_score: Label = $GameOver/HighestScore
+
+var game_over: bool = false
 
 var data: Dictionary = {
 	"row1" : {
@@ -43,20 +35,71 @@ var data: Dictionary = {
 	}
 }
 
+func save_data() -> void:
+	pass
+
+func load_data() -> void:
+	pass
+
+func on_death() -> void:
+	game_over = true
+	var total_score = collect_score()
+	var highest_block = find_highest()
+	game_over_panel.visible = true
+	score.text = str(total_score)
+	highest.text = str(highest_block)
+
 func get_empty_cells() -> Array:
 	var empty = []
-	for i in range(1,5):
-		for e in range(1,5):
-			if data["row%d" % e]["col%d" % i] == 0:
-				empty.append(Vector2(i, e))
+	for row_idx in range(1, 5):
+		for col_idx in range(1, 5):
+			if data["row%d" % row_idx]["col%d" % col_idx] == 0:
+				empty.append(Vector2(col_idx, row_idx))
 	return empty
 
 func spawn_tile() -> void:
 	var empty = get_empty_cells()
 	if empty.size() == 0:
-		return #Game end logic here?
+		return
 	var cell = empty[randi() % empty.size()]
-	data["row%d" % int(cell.x)]["col%d" % int(cell.y)] = 4 if randi() % 10 == 0 else 2
+	var row_key = "row%d" % int(cell.y)
+	var col_key = "col%d" % int(cell.x)
+	
+	if data[row_key][col_key] != 0:
+		for backup_cell in empty:
+			var backup_row = "row%d" % int(backup_cell.y)
+			var backup_col = "col%d" % int(backup_cell.x)
+			if data[backup_row][backup_col] == 0:
+				row_key = backup_row
+				col_key = backup_col
+				break
+	
+	data[row_key][col_key] = 4 if randi() % 10 == 0 else 2
+
+func can_move() -> bool:
+	for row_idx in range(1, 5):
+		for col_idx in range(1, 4):
+			var current = data["row%d" % row_idx]["col%d" % col_idx]
+			var next = data["row%d" % row_idx]["col%d" % (col_idx + 1)]
+			if current == next and current != 0:
+				return true
+			if current == 0 and next != 0:
+				return true
+			if current != 0 and next == 0:
+				return true
+	
+	for col_idx in range(1, 5):
+		for row_idx in range(1, 4):
+			var current = data["row%d" % row_idx]["col%d" % col_idx]
+			var next = data["row%d" % (row_idx + 1)]["col%d" % col_idx]
+			if current == next and current != 0:
+				return true
+			if current == 0 and next != 0:
+				return true
+			if current != 0 and next == 0:
+				return true
+	
+	return false
 
 func update_board() -> void:
 	for i in range(1,5):
@@ -66,24 +109,127 @@ func update_board() -> void:
 			var value = data["row%d" % i]["col%d" % e]
 			var label: Label = panel.get_child(0)
 			label.text = str(value if value != 0 else "")
-			
+
+func find_highest() -> int:
+	var highest_block: int = 0
+	for e in data:
+		for z in data[e]:
+			for skibidi in data[e][z]:
+				if skibidi > highest_block:
+					highest_block = int(skibidi)
+	return highest_block + 1
+
+func collect_score() -> int:
+	var total_score: int = 0
+	for e in data:
+		for z in data[e]:
+			for skibidi in data[e][z]:
+				total_score += int(skibidi)
+	return total_score
+
 func _ready() -> void:
 	spawn_tile()
 	spawn_tile()
 	update_board()
 
-func move_items(dir: String) -> void:
+func compress_line(line: Array) -> Array:
+	var compressed = []
+	for val in line:
+		if val != 0:
+			compressed.append(val)
+	return compressed
+
+func merge_line(line: Array) -> Array:
+	var merged = []
+	var i = 0
+	while i < line.size():
+		if i + 1 < line.size() and line[i] == line[i + 1]:
+			merged.append(line[i] * 2)
+			i += 2
+		else:
+			merged.append(line[i])
+			i += 1
+	return merged
+
+func pad_line(line: Array) -> Array:
+	while line.size() < 4:
+		line.append(0)
+	return line
+
+func process_line(line: Array) -> Array:
+	var result = compress_line(line)
+	result = merge_line(result)
+	result = pad_line(result)
+	return result
+
+func move_items(dir: String) -> bool:
+	var previous_state = {}
+	for row_idx in range(1, 5):
+		previous_state["row%d" % row_idx] = {}
+		for col_idx in range(1, 5):
+			previous_state["row%d" % row_idx]["col%d" % col_idx] = data["row%d" % row_idx]["col%d" % col_idx]
+	
 	match dir:
 		"up":
-			print("Moving up")
+			for col_idx in range(1, 5):
+				var column = []
+				for row_idx in range(1, 5):
+					column.append(data["row%d" % row_idx]["col%d" % col_idx])
+				column = process_line(column)
+				var row_positions = [1, 2, 3, 4]
+				for idx in range(4):
+					data["row%d" % row_positions[idx]]["col%d" % col_idx] = column[idx]
 		"down":
-			print("Moving down")
+			for col_idx in range(1, 5):
+				var column = []
+				for row_idx in range(4, 0, -1):
+					column.append(data["row%d" % row_idx]["col%d" % col_idx])
+				column = process_line(column)
+				var row_positions = [4, 3, 2, 1]
+				for idx in range(4):
+					data["row%d" % row_positions[idx]]["col%d" % col_idx] = column[idx]
 		"left":
-			print("Moving left")
+			for row_idx in range(1, 5):
+				var row = []
+				for col_idx in range(1, 5):
+					row.append(data["row%d" % row_idx]["col%d" % col_idx])
+				row = process_line(row)
+				var col_positions = [1, 2, 3, 4]
+				for idx in range(4):
+					data["row%d" % row_idx]["col%d" % col_positions[idx]] = row[idx]
 		"right":
-			print("Moving right")
+			for row_idx in range(1, 5):
+				var row = []
+				for col_idx in range(4, 0, -1):
+					row.append(data["row%d" % row_idx]["col%d" % col_idx])
+				row = process_line(row)
+				var col_positions = [4, 3, 2, 1]
+				for idx in range(4):
+					data["row%d" % row_idx]["col%d" % col_positions[idx]] = row[idx]
+	
+	var state_changed = false
+	for row_idx in range(1, 5):
+		for col_idx in range(1, 5):
+			if previous_state["row%d" % row_idx]["col%d" % col_idx] != data["row%d" % row_idx]["col%d" % col_idx]:
+				state_changed = true
+				break
+		if state_changed:
+			break
+	
+	update_board()
+	
+	if state_changed:
+		spawn_tile()
+	
+	if !can_move():
+		on_death()
+	
+	return state_changed
 
 func _physics_process(_delta: float) -> void:
+	if game_over:
+		return
+	
 	if Input.is_action_just_pressed("up"):
 		move_items("up")
 	
@@ -98,4 +244,10 @@ func _physics_process(_delta: float) -> void:
 
 
 func _on_return_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/games_selector.tscn")
+
+func _on_retry_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Games/2048.tscn")
+
+func _on_exit_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/games_selector.tscn")
