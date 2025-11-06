@@ -1,0 +1,978 @@
+[gd_scene load_steps=10 format=3 uid="uid://1cm8sbb6e3sf"]
+
+[ext_resource type="Script" uid="uid://kbb0k5ru0il1" path="res://Scripts/Games/merge_city.gd" id="1_8plyl"]
+[ext_resource type="Texture2D" uid="uid://l50p1x3khroq" path="res://Assets/Decals/merge/borgir.png" id="2_adksn"]
+[ext_resource type="Texture2D" uid="uid://dni27hqfwesg2" path="res://Assets/Decals/merge/bin.png" id="3_5lsn7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5jxc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5lsn7"]
+bg_color = Color(0.24705882, 0.24705882, 0.24705882, 0.43137255)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kovj5"]
+bg_color = Color(0.24705882, 0.24705882, 0.24705882, 0.43137255)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6c4ve"]
+bg_color = Color(0.24705882, 0.24705882, 0.24705882, 0.43137255)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7c2f"]
+bg_color = Color(0.24705882, 0.24705882, 0.24705882, 0.43137255)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80oq3"]
+bg_color = Color(0.75686276, 0, 0, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[node name="merge_city" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8plyl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.5372549, 0.21960784, 1)
+
+[node name="GameArea" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j5jxc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 7.0
+offset_right = 3.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Row1" type="HBoxContainer" parent="GameArea/VBoxContainer"]
+custom_minimum_size = Vector2(1152, 104.6)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="GridItem" type="Button" parent="GameArea/VBoxContainer/Row1"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row1/GridItem"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem2" type="Button" parent="GameArea/VBoxContainer/Row1"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row1/GridItem2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem3" type="Button" parent="GameArea/VBoxContainer/Row1"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row1/GridItem3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem4" type="Button" parent="GameArea/VBoxContainer/Row1"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row1/GridItem4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem5" type="Button" parent="GameArea/VBoxContainer/Row1"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row1/GridItem5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem6" type="Button" parent="GameArea/VBoxContainer/Row1"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row1/GridItem6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem7" type="Button" parent="GameArea/VBoxContainer/Row1"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row1/GridItem7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem8" type="Button" parent="GameArea/VBoxContainer/Row1"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row1/GridItem8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem9" type="Button" parent="GameArea/VBoxContainer/Row1"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row1/GridItem9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="Row2" type="HBoxContainer" parent="GameArea/VBoxContainer"]
+custom_minimum_size = Vector2(1152, 104.6)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="GridItem" type="Button" parent="GameArea/VBoxContainer/Row2"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row2/GridItem"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem2" type="Button" parent="GameArea/VBoxContainer/Row2"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row2/GridItem2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem3" type="Button" parent="GameArea/VBoxContainer/Row2"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row2/GridItem3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem4" type="Button" parent="GameArea/VBoxContainer/Row2"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row2/GridItem4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem5" type="Button" parent="GameArea/VBoxContainer/Row2"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row2/GridItem5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem6" type="Button" parent="GameArea/VBoxContainer/Row2"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row2/GridItem6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem7" type="Button" parent="GameArea/VBoxContainer/Row2"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row2/GridItem7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem8" type="Button" parent="GameArea/VBoxContainer/Row2"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row2/GridItem8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem9" type="Button" parent="GameArea/VBoxContainer/Row2"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row2/GridItem9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="Row3" type="HBoxContainer" parent="GameArea/VBoxContainer"]
+custom_minimum_size = Vector2(1152, 104.6)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="GridItem" type="Button" parent="GameArea/VBoxContainer/Row3"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row3/GridItem"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem2" type="Button" parent="GameArea/VBoxContainer/Row3"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row3/GridItem2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem3" type="Button" parent="GameArea/VBoxContainer/Row3"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row3/GridItem3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem4" type="Button" parent="GameArea/VBoxContainer/Row3"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row3/GridItem4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem5" type="Button" parent="GameArea/VBoxContainer/Row3"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row3/GridItem5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem6" type="Button" parent="GameArea/VBoxContainer/Row3"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row3/GridItem6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem7" type="Button" parent="GameArea/VBoxContainer/Row3"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row3/GridItem7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem8" type="Button" parent="GameArea/VBoxContainer/Row3"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row3/GridItem8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem9" type="Button" parent="GameArea/VBoxContainer/Row3"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row3/GridItem9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="Row4" type="HBoxContainer" parent="GameArea/VBoxContainer"]
+custom_minimum_size = Vector2(1152, 104.6)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="GridItem" type="Button" parent="GameArea/VBoxContainer/Row4"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row4/GridItem"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem2" type="Button" parent="GameArea/VBoxContainer/Row4"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row4/GridItem2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem3" type="Button" parent="GameArea/VBoxContainer/Row4"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row4/GridItem3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem4" type="Button" parent="GameArea/VBoxContainer/Row4"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row4/GridItem4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem5" type="Button" parent="GameArea/VBoxContainer/Row4"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row4/GridItem5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem6" type="Button" parent="GameArea/VBoxContainer/Row4"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row4/GridItem6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem7" type="Button" parent="GameArea/VBoxContainer/Row4"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row4/GridItem7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem8" type="Button" parent="GameArea/VBoxContainer/Row4"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row4/GridItem8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem9" type="Button" parent="GameArea/VBoxContainer/Row4"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row4/GridItem9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="Row5" type="HBoxContainer" parent="GameArea/VBoxContainer"]
+custom_minimum_size = Vector2(1152, 104.6)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="GridItem" type="Button" parent="GameArea/VBoxContainer/Row5"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row5/GridItem"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem2" type="Button" parent="GameArea/VBoxContainer/Row5"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row5/GridItem2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem3" type="Button" parent="GameArea/VBoxContainer/Row5"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row5/GridItem3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem4" type="Button" parent="GameArea/VBoxContainer/Row5"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row5/GridItem4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem5" type="Button" parent="GameArea/VBoxContainer/Row5"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row5/GridItem5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem6" type="Button" parent="GameArea/VBoxContainer/Row5"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row5/GridItem6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem7" type="Button" parent="GameArea/VBoxContainer/Row5"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row5/GridItem7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem8" type="Button" parent="GameArea/VBoxContainer/Row5"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row5/GridItem8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="GridItem9" type="Button" parent="GameArea/VBoxContainer/Row5"]
+custom_minimum_size = Vector2(115.2, 104.6)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5lsn7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kovj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6c4ve")
+theme_override_styles/focus = SubResource("StyleBoxFlat_s7c2f")
+
+[node name="TextureRect" type="TextureRect" parent="GameArea/VBoxContainer/Row5/GridItem9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adksn")
+expand_mode = 1
+metadata/item = "burger"
+
+[node name="Toolbar" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -105.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Toolbar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Toolbar/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+
+[node name="Delete" type="Button" parent="Toolbar/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_80oq3")
+icon = ExtResource("3_5lsn7")
+expand_icon = true
+
+[connection signal="pressed" from="Toolbar/HBoxContainer/Delete" to="." method="_on_delete_pressed"]
