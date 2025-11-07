@@ -26,10 +26,22 @@ var purchase_path: Dictionary = {
 	],
 	"som" : [
 		"som" , "elltommo", "projector"
+	],
+	"elltommo" : [
+		"elltommo", "projector", "vue"
+	],
+	"projector" : [
+		"projector", "vue", "skibidi"
+	],
+	"vue" : [
+		"vue", "skibidi", "luffy"
+	],
+	"skibidi" : [
+		"skibidi", "luffy", "mining"
 	]
 }
 
-var highest_purchase: String = "som"
+var highest_purchase: String = "skibidi"
 
 var items: Dictionary = {
 	"burger" : preload("uid://l50p1x3khroq"),
@@ -39,6 +51,9 @@ var items: Dictionary = {
 	"elltommo" : preload("uid://cnhwuapu13gb7"),
 	"projector" : preload("uid://duexs1hykb3g8"),
 	"vue" : preload("uid://bsxsemlfqqci5"),
+	"skibidi" : preload("uid://k4eesinfocef"),
+	"luffy" : preload("uid://dlloa4p14qxuy"),
+	"mining" : preload("uid://dxl2pnd0i2ypr"),
 }
 
 var income: Dictionary = {
@@ -50,6 +65,9 @@ var income: Dictionary = {
 	"elltommo" : 31,
 	"projector" : 63,
 	"vue" : 127,
+	"skibidi" : 255,
+	"luffy" : 511,
+	"mining" : 1023
 }
 
 var upgrade_path: Dictionary = { #Current item : item if upgraded
@@ -58,8 +76,30 @@ var upgrade_path: Dictionary = { #Current item : item if upgraded
 	"gibiASMR" : "som",
 	"som" : "elltommo",
 	"elltommo" : "projector",
-	"projector" : "vue"
+	"projector" : "vue",
+	"vue" : "skibidi",
+	"skibidi" : "luffy",
+	"luffy" : "mining",
 }
+
+#Chazza written command
+func format_number(num: int) -> String:
+	var suffixes = ["", "k", "m", "b", "t", "q", "Q"]
+	var index = 0
+	var value = float(num)
+
+	while value >= 1000.0 and index < suffixes.size() - 1:
+		value /= 1000.0
+		index += 1
+
+	var rounded = round(value * 10) / 10.0
+	var text = str(rounded)
+
+	if text.ends_with(".0"):
+		text = text.substr(0, text.length() - 2)
+
+	return text + suffixes[index]
+
 
 func handle_click(button: Button) -> void:
 	if currently_selected == button: #Disallow self merging.
@@ -152,8 +192,8 @@ func _ready() -> void:
 	update_game()
 
 func update_game() -> void:
-	coins_label.text = "COINS: %s" % coins
-	price_label.text = "PRICE: %s" % purchase_price
+	coins_label.text = "COINS: %s" % format_number(coins)
+	price_label.text = "COST: %s" % format_number(purchase_price)
 
 func _on_delete_pressed() -> void:
 	if currently_selected:
@@ -181,17 +221,21 @@ func _on_purchase_pressed() -> void:
 		purchases_till_upgrade = 20
 		
 	if purchases_till_price == 0:
-		purchase_price = int(purchase_price * 3.5) #Hack to make godot stop shouting to me about type conversion
+		purchase_price += int(10 + int((float(purchase_price) / 2)) * 1.1)
 		purchases_till_price = 4
 	
-	var rng = randi_range(1, 10)
+	var rng = 1
 	var purchased: String
-	if rng <= 6: # 60%chance it's normal
+	if rng <= 6: #60% chance it's normal
+		print(min_purchase)
+		print(highest_purchase)
 		if purchase_path.has(min_purchase):
+			print("has min")
 			purchased = purchase_path[min_purchase][0]
 		else:
+			print("no min, using max")
 			purchased = purchase_path[highest_purchase][0]
-	elif rng > 6 and rng <= 9: # 30%chance next tier
+	elif rng > 6 and rng <= 9: #30% chance next tier
 		if purchase_path.has(min_purchase):
 			purchased = purchase_path[min_purchase][1]
 		else:
@@ -239,3 +283,47 @@ func _on_earn_timeout() -> void:
 		earn += income[e.get_meta("item")]
 	coins += earn
 	update_game()
+
+func _on_random_spawn_timeout() -> void:
+	var rng = 1
+	var purchased: String
+	if rng <= 6: #60% chance it's normal
+		print(min_purchase)
+		print(highest_purchase)
+		if purchase_path.has(min_purchase):
+			print("has min")
+			purchased = purchase_path[min_purchase][0]
+		else:
+			print("no min, using max")
+			purchased = purchase_path[highest_purchase][0]
+	elif rng > 6 and rng <= 9: #30% chance next tier
+		if purchase_path.has(min_purchase):
+			purchased = purchase_path[min_purchase][1]
+		else:
+			purchased = purchase_path[highest_purchase][1]
+	elif rng == 10: #10% rare
+		if purchase_path.has(min_purchase):
+			purchased = purchase_path[min_purchase][2]
+		else:
+			purchased = purchase_path[highest_purchase][2]
+
+	var children = button_container.get_children()
+	var found_free: bool = false
+	for e in children:
+		if found_free:
+			break
+		var grandchildren = e.get_children()
+		for i in grandchildren:
+			if not (i is Button):
+				continue
+
+			var item_meta = i.get_child(0).get_meta("item")
+			if item_meta == "none":
+				i.get_child(0).set_meta("item", purchased)
+				i.get_child(0).texture = items[purchased]
+
+				var row_index = i.get_meta("row")
+				var item_index = i.get_meta("item")
+				SaveManager.game_data["mergecity"][row_index][item_index] = purchased
+				found_free = true
+				break

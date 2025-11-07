@@ -1,0 +1,166 @@
+[gd_scene load_steps=4 format=3 uid="uid://piquhnrn2vht"]
+
+[ext_resource type="Script" uid="uid://c4stlhygh3h2r" path="res://Scripts/Games/noughtsandcrosses.gd" id="1_gagkc"]
+[ext_resource type="Theme" uid="uid://by0mhiy2lvj0j" path="res://Assets/Themes/noughtsandcrosses.tres" id="1_skymw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2531"]
+bg_color = Color(0.49803922, 0.7254902, 0.62352943, 1)
+
+[node name="Noughtsandcrosses" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gagkc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.43904933, 0.43904904, 0.4390493, 1)
+
+[node name="GameArea" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -341.0
+offset_top = -324.0
+offset_right = 342.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d2531")
+
+[node name="Borders" type="Control" parent="GameArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -38.0
+offset_right = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="GameArea/Borders"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 20.0
+offset_right = 226.0
+offset_bottom = 604.0
+color = Color(0.011087579, 0.011087578, 0.01108758, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="GameArea/Borders"]
+layout_mode = 0
+offset_left = 711.9963
+offset_top = 195.0
+offset_right = 722.9963
+offset_bottom = 854.8398
+rotation = 1.5707964
+color = Color(0.011087579, 0.011087578, 0.01108758, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="GameArea/Borders"]
+layout_mode = 0
+offset_left = 712.13434
+offset_top = 419.0
+offset_right = 723.13434
+offset_bottom = 1079.0344
+rotation = 1.5707964
+color = Color(0.011087579, 0.011087578, 0.01108758, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="GameArea/Borders"]
+layout_mode = 0
+offset_left = 538.0
+offset_top = 19.0
+offset_right = 549.0
+offset_bottom = 605.0
+color = Color(0.011087579, 0.011087578, 0.01108758, 1)
+
+[node name="TopLeft" type="Button" parent="GameArea/Borders"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 20.0
+offset_right = 215.0
+offset_bottom = 195.0
+theme = ExtResource("1_skymw")
+
+[node name="TopMiddle" type="Button" parent="GameArea/Borders"]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 20.0
+offset_right = 537.0
+offset_bottom = 195.0
+theme = ExtResource("1_skymw")
+
+[node name="TopRight" type="Button" parent="GameArea/Borders"]
+layout_mode = 0
+offset_left = 549.0
+offset_top = 20.0
+offset_right = 712.0
+offset_bottom = 195.0
+theme = ExtResource("1_skymw")
+
+[node name="MiddleLeft" type="Button" parent="GameArea/Borders"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 206.0
+offset_right = 215.0
+offset_bottom = 419.0
+theme = ExtResource("1_skymw")
+
+[node name="MiddleMiddle" type="Button" parent="GameArea/Borders"]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 205.0
+offset_right = 537.0
+offset_bottom = 421.0
+theme = ExtResource("1_skymw")
+
+[node name="MiddleRight" type="Button" parent="GameArea/Borders"]
+layout_mode = 0
+offset_left = 549.0
+offset_top = 205.0
+offset_right = 712.0
+offset_bottom = 419.0
+theme = ExtResource("1_skymw")
+
+[node name="BottomLeft" type="Button" parent="GameArea/Borders"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 429.0
+offset_right = 215.0
+offset_bottom = 604.0
+theme = ExtResource("1_skymw")
+
+[node name="BottomMiddle" type="Button" parent="GameArea/Borders"]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 430.0
+offset_right = 537.0
+offset_bottom = 605.0
+theme = ExtResource("1_skymw")
+
+[node name="BottomRight" type="Button" parent="GameArea/Borders"]
+layout_mode = 0
+offset_left = 549.0
+offset_top = 429.0
+offset_right = 712.0
+offset_bottom = 604.0
+theme = ExtResource("1_skymw")
+
+[connection signal="pressed" from="GameArea/Borders/TopLeft" to="." method="_on_top_left_pressed"]
+[connection signal="pressed" from="GameArea/Borders/TopMiddle" to="." method="_on_top_middle_pressed"]
+[connection signal="pressed" from="GameArea/Borders/TopRight" to="." method="_on_top_right_pressed"]
+[connection signal="pressed" from="GameArea/Borders/MiddleLeft" to="." method="_on_middle_left_pressed"]
+[connection signal="pressed" from="GameArea/Borders/MiddleMiddle" to="." method="_on_middle_middle_pressed"]
+[connection signal="pressed" from="GameArea/Borders/MiddleRight" to="." method="_on_middle_right_pressed"]
+[connection signal="pressed" from="GameArea/Borders/BottomLeft" to="." method="_on_bottom_left_pressed"]
+[connection signal="pressed" from="GameArea/Borders/BottomMiddle" to="." method="_on_bottom_middle_pressed"]
+[connection signal="pressed" from="GameArea/Borders/BottomRight" to="." method="_on_bottom_right_pressed"]

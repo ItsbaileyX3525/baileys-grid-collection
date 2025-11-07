@@ -972,10 +972,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 45
 text = "COINS: 67"
 
-[node name="MarginContainer4" type="MarginContainer" parent="Toolbar/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 50
-
 [node name="Purchase" type="Button" parent="Toolbar/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 41
@@ -984,13 +980,18 @@ text = "BUY MERGE"
 [node name="Price" type="Label" parent="Toolbar/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 45
-text = "COST: 999K"
+text = "COST: 999.9K"
 
 [node name="Earn" type="Timer" parent="."]
 wait_time = 3.0
+autostart = true
+
+[node name="RandomSpawn" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 
 [connection signal="pressed" from="Toolbar/HBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Toolbar/HBoxContainer/Delete" to="." method="_on_delete_pressed"]
 [connection signal="pressed" from="Toolbar/HBoxContainer/Purchase" to="." method="_on_purchase_pressed"]
 [connection signal="timeout" from="Earn" to="." method="_on_earn_timeout"]
+[connection signal="timeout" from="RandomSpawn" to="." method="_on_random_spawn_timeout"]
