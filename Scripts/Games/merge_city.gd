@@ -1,10 +1,35 @@
 extends Control
 @onready var button_container: VBoxContainer = $GameArea/VBoxContainer
 @onready var coins_label: Label = $Toolbar/HBoxContainer/CoinsLabel
+@onready var price_label: Label = $Toolbar/HBoxContainer/Price
+
+var texture_rects: Array = [] #Can use this for general look up, no expensive loops
 
 var currently_selected: Button
 var previous_selected: Button
 var on_click: int = 0
+var coins: int = 50
+var purchase_price: int = 10
+var min_purchase: String = "burger"
+var purchases_till_price: int = 6
+var purchases_till_upgrade: int = 7
+
+var purchase_path: Dictionary = {
+	"burger" : [
+		"burger", "chicken", "gibiASMR"
+	],
+	"chicken" : [
+		"chicken", "gibiASMR", "som"
+	],
+	"gibiASMR" : [
+		"gibiASMR", "som", "elltommo" 
+	],
+	"som" : [
+		"som" , "elltommo", "projector"
+	]
+}
+
+var highest_purchase: String = "som"
 
 var items: Dictionary = {
 	"burger" : preload("uid://l50p1x3khroq"),
@@ -13,6 +38,18 @@ var items: Dictionary = {
 	"som" : preload("uid://br2kxpdue76xv"),
 	"elltommo" : preload("uid://cnhwuapu13gb7"),
 	"projector" : preload("uid://duexs1hykb3g8"),
+	"vue" : preload("uid://bsxsemlfqqci5"),
+}
+
+var income: Dictionary = {
+	"none" : 0,
+	"burger" : 1,
+	"chicken" : 3,
+	"gibiASMR" : 7,
+	"som" : 15,
+	"elltommo" : 31,
+	"projector" : 63,
+	"vue" : 127,
 }
 
 var upgrade_path: Dictionary = { #Current item : item if upgraded
@@ -21,6 +58,7 @@ var upgrade_path: Dictionary = { #Current item : item if upgraded
 	"gibiASMR" : "som",
 	"som" : "elltommo",
 	"elltommo" : "projector",
+	"projector" : "vue"
 }
 
 func handle_click(button: Button) -> void:
@@ -79,7 +117,6 @@ func _ready() -> void:
 	var rows = button_container.get_children()
 	for row_index in range(rows.size()):
 		var row = rows[row_index]
-		
 		var buttons: Array = []
 		for child in row.get_children():
 			if child is Button:
@@ -89,6 +126,7 @@ func _ready() -> void:
 			var btn = buttons[item_index]
 			var item_data_key = str(item_index + 1)
 			var row_key = "row%d" % (row_index + 1)
+			
 			var item_data: String = SaveManager.game_data["mergecity"][row_key].get(item_data_key, "none")
 			
 			if items.has(item_data):
@@ -104,14 +142,100 @@ func _ready() -> void:
 			var child = btn.get_child(0)
 			if child.has_method("texture") and child.texture == null:
 				child.set_meta("item", "none")
+			texture_rects.append(child)
 
+	coins = int(SaveManager.game_data["mergecity"]["coins"])
+	min_purchase = SaveManager.game_data["mergecity"]["min_purchase"]
+	purchase_price = int(SaveManager.game_data["mergecity"]["purchase_price"])
+	purchases_till_upgrade = int(SaveManager.game_data["mergecity"]["purchases_till_upgrade"])
+	purchases_till_price = int(SaveManager.game_data["mergecity"]["purchases_till_price"])
+	update_game()
+
+func update_game() -> void:
+	coins_label.text = "COINS: %s" % coins
+	price_label.text = "PRICE: %s" % purchase_price
 
 func _on_delete_pressed() -> void:
 	if currently_selected:
 		currently_selected.get_child(0).texture = null
 		currently_selected.get_child(0).set_meta("item", "none")
+		var row_index = currently_selected.get_meta("row")
+		var item_index = currently_selected.get_meta("item")
+		SaveManager.game_data["mergecity"][row_index][item_index] = currently_selected.get_child(0).get_meta("item")
 		currently_selected = null
 		on_click = 0
 
 func _on_exit_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/games_selector.tscn")
+
+func _on_purchase_pressed() -> void:
+	if not (coins >= purchase_price):
+		return
+
+	coins -= purchase_price
+	purchases_till_price -= 1
+	purchases_till_upgrade -= 1
+	
+	if purchases_till_upgrade == 0:
+		min_purchase = upgrade_path[min_purchase]
+		purchases_till_upgrade = 20
+		
+	if purchases_till_price == 0:
+		purchase_price = int(purchase_price * 3.5) #Hack to make godot stop shouting to me about type conversion
+		purchases_till_price = 4
+	
+	var rng = randi_range(1, 10)
+	var purchased: String
+	if rng <= 6: # 60%chance it's normal
+		if purchase_path.has(min_purchase):
+			purchased = purchase_path[min_purchase][0]
+		else:
+			purchased = purchase_path[highest_purchase][0]
+	elif rng > 6 and rng <= 9: # 30%chance next tier
+		if purchase_path.has(min_purchase):
+			purchased = purchase_path[min_purchase][1]
+		else:
+			purchased = purchase_path[highest_purchase][1]
+	elif rng == 10: #10% rare
+		if purchase_path.has(min_purchase):
+			purchased = purchase_path[min_purchase][2]
+		else:
+			purchased = purchase_path[highest_purchase][2]
+
+	var children = button_container.get_children()
+	var found_free: bool = false
+	for e in children:
+		if found_free:
+			break
+		var grandchildren = e.get_children()
+		for i in grandchildren:
+			if not (i is Button):
+				continue
+
+			var item_meta = i.get_child(0).get_meta("item")
+			if item_meta == "none":
+				i.get_child(0).set_meta("item", purchased)
+				i.get_child(0).texture = items[purchased]
+
+				var row_index = i.get_meta("row")
+				var item_index = i.get_meta("item")
+				SaveManager.game_data["mergecity"][row_index][item_index] = purchased
+				found_free = true
+				break
+
+	SaveManager.game_data["mergecity"]["coins"] = coins
+	SaveManager.game_data["mergecity"]["min_purchase"] = min_purchase
+	SaveManager.game_data["mergecity"]["purchase_price"] = purchase_price
+	SaveManager.game_data["mergecity"]["purchases_till_upgrade"] = purchases_till_upgrade
+	SaveManager.game_data["mergecity"]["purchases_till_price"] = purchases_till_price
+
+	SaveManager.save_data()
+
+	update_game()
+
+func _on_earn_timeout() -> void:
+	var earn: int = 0
+	for e in texture_rects:
+		earn += income[e.get_meta("item")]
+	coins += earn
+	update_game()
