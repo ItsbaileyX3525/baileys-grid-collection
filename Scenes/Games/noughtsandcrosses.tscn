@@ -155,6 +155,58 @@ offset_right = 712.0
 offset_bottom = 604.0
 theme = ExtResource("1_skymw")
 
+[node name="WinLossScreen" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="WinLossScreen"]
+layout_mode = 0
+offset_right = 1169.0
+offset_bottom = 687.0
+color = Color(0.50928617, 0.50928617, 0.50928617, 1)
+
+[node name="Winner" type="Label" parent="WinLossScreen"]
+layout_mode = 0
+offset_right = 4058.5752
+offset_bottom = 565.0
+scale = Vector2(0.28384346, 0.28384346)
+theme_override_font_sizes/font_size = 466
+text = "YOU WIN!!!"
+horizontal_alignment = 1
+
+[node name="Restart" type="Button" parent="WinLossScreen"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 472.0
+offset_right = 1644.0
+offset_bottom = 815.0
+scale = Vector2(0.2789479, 0.2789479)
+theme_override_font_sizes/font_size = 276
+text = "RESTART"
+
+[node name="Leave" type="Button" parent="WinLossScreen"]
+layout_mode = 0
+offset_left = 708.0
+offset_top = 463.0
+offset_right = 1430.0
+offset_bottom = 709.0
+scale = Vector2(0.45446137, 0.45446137)
+theme_override_font_sizes/font_size = 196
+text = "QUIT"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 367.0
+scale = Vector2(0.20800446, 0.20800446)
+theme_override_font_sizes/font_size = 296
+text = "Exit"
+
 [connection signal="pressed" from="GameArea/Borders/TopLeft" to="." method="_on_top_left_pressed"]
 [connection signal="pressed" from="GameArea/Borders/TopMiddle" to="." method="_on_top_middle_pressed"]
 [connection signal="pressed" from="GameArea/Borders/TopRight" to="." method="_on_top_right_pressed"]
@@ -164,3 +216,6 @@ theme = ExtResource("1_skymw")
 [connection signal="pressed" from="GameArea/Borders/BottomLeft" to="." method="_on_bottom_left_pressed"]
 [connection signal="pressed" from="GameArea/Borders/BottomMiddle" to="." method="_on_bottom_middle_pressed"]
 [connection signal="pressed" from="GameArea/Borders/BottomRight" to="." method="_on_bottom_right_pressed"]
+[connection signal="pressed" from="WinLossScreen/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="WinLossScreen/Leave" to="." method="_on_leave_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

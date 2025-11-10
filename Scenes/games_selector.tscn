@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://og3w8xj70hjg"]
+[gd_scene load_steps=12 format=3 uid="uid://og3w8xj70hjg"]
 
 [ext_resource type="Theme" uid="uid://bqsfmgjhhix7j" path="res://Assets/Themes/games_selector.tres" id="1_h1j5r"]
 [ext_resource type="Script" uid="uid://c5xexham2rv4v" path="res://Scripts/games_selector.gd" id="1_o8dpw"]
 [ext_resource type="Texture2D" uid="uid://c2v75a4arwee" path="res://Assets/Decals/2048.jpg" id="3_eorsm"]
 [ext_resource type="Texture2D" uid="uid://dy7fv8571ikr1" path="res://Assets/Decals/mergecity.jpg" id="4_41op2"]
+[ext_resource type="Texture2D" uid="uid://wpq1yxowuchl" path="res://Assets/Decals/tictactoe.jpg" id="5_w7yo2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eorsm"]
 texture = ExtResource("3_eorsm")
@@ -18,6 +19,12 @@ texture = ExtResource("4_41op2")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u8o3l"]
 texture = ExtResource("4_41op2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ma01f"]
+texture = ExtResource("5_w7yo2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0xl1x"]
+texture = ExtResource("5_w7yo2")
 
 [node name="GamesSelector" type="Control"]
 layout_mode = 3
@@ -67,6 +74,8 @@ text = "Merge City"
 custom_minimum_size = Vector2(384, 0)
 layout_mode = 2
 theme = ExtResource("1_h1j5r")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ma01f")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0xl1x")
 text = "Noughts and Crosses (tictactoe)"
 autowrap_mode = 3
 

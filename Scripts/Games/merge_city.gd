@@ -61,13 +61,13 @@ var income: Dictionary = {
 	"burger" : 1,
 	"chicken" : 3,
 	"gibiASMR" : 7,
-	"som" : 15,
-	"elltommo" : 31,
-	"projector" : 63,
-	"vue" : 127,
-	"skibidi" : 255,
-	"luffy" : 511,
-	"mining" : 1023
+	"som" : 35,
+	"elltommo" : 75,
+	"projector" : 160,
+	"vue" : 400,
+	"skibidi" : 1000,
+	"luffy" : 2250,
+	"mining" : 5100
 }
 
 var upgrade_path: Dictionary = { #Current item : item if upgraded
